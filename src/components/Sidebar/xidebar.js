@@ -1,7 +1,7 @@
 import React from 'react'
 import { Sidebar, Menu, MenuItem,useProSidebar, SubMenu } from 'react-pro-sidebar';
-import { SidebarContainer, SidebarWrapper, Labels } from './SidebarElements'
-import { faBars, faFileInvoice, faHome, faUsers, faExclamationTriangle, faLeaf } from '@fortawesome/free-solid-svg-icons';
+import { Labels } from './SidebarElements'
+import { faFileInvoice, faHome, faUsers, faExclamationTriangle, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import GoogleAnalyticsIcon from 'mdi-react/GoogleAnalyticsIcon'
 import AccountKeyIcon from 'mdi-react/AccountKeyIcon'
 import FileDocumentIcon from 'mdi-react/FileDocumentBoxIcon'
@@ -17,7 +17,6 @@ import bxError from '@iconify/icons-bx/bx-error'
 import bxPhotoAlbum from '@iconify/icons-bx/bx-photo-album'
 import bxsBarChart from '@iconify/icons-bx/bxs-bar-chart-alt-2'
 import { Icon } from '@iconify/react/dist/offline';
-import {ReactComponent as ReactLogo} from '../../assets/images/blueberry_logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
@@ -41,10 +40,6 @@ const Labs = styled.p`
 
 const Xidebar = () => {
     const { collapseSidebar } = useProSidebar();
-    const imgsize = {
-        height: 25,
-        width: 45
-    }
 
   return (
     <div className='Stick' style={{ display: 'flex', color: '#acaeb0', fontSize:13, backgroundColor: '#0c2556' }}>

@@ -3,7 +3,6 @@ import { EventData, featuredData, ScheduleData, ProductData } from './data'
 import styled from 'styled-components'
 import Spline from '../Charts/Spline'
 import Barcharts from '../Charts/Barcharts'
-import CalendarIcon from 'mdi-react/CalendarIcon'
 import bxCalendar from '@iconify/icons-bx/bx-calendar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Icon } from '@iconify/react/dist/offline';
@@ -54,15 +53,6 @@ const FeaturedWrap = styled.div`
     min-width:${props => props.tWidth || "auto"};
     max-height:${props => props.tHeight || "auto"};
 `
-const FeaturedList = styled.div`
-    flex: 1;
-    margin: ;
-    padding: 30px;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-    background: white;
-`
 const FeaturedTitle = styled.span`
     font-size: 13px;
 `
@@ -85,27 +75,7 @@ const FeaturedMoneyContainer = styled.div`
         color: red;
     }
 `
-const FeaturedSub = styled.span`
-    font-size: 15px;
-    color: gray;
-`
 
-const SmWidgetContainer = styled.div`
-    flex: 1;
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-    padding: 20px;
-    margin-right: 20px;
-`
-const SmWidgetTitle = styled.span`
-    font-size: 22px;
-    font-weight: 600;
-`
-const SmWidgetImg = styled.img`
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-`
 const SmWidgetList = styled.ul`
     margin: 0;
     padding: 0;
@@ -120,40 +90,12 @@ const SmWidgetList = styled.ul`
         font: 13px;
     }
 `
-const SmWidgetUser = styled.div`
-    display: flex;
-    flex-direction: column;
-    font: 13px
-    .SmWidgetUsername{
-    }.SmWidgetUserTitle{
-    }
-`
-const SmWidgetButton = styled.div`
-    display: flex;
-    align-items: center;
-    border: none;
-    padding: 7px 10px;
-    color: #555;
-    cursor: pointer;
-    .SmWidgetIcon{
-        font-size: 16px !important;
-        margin-right: 5px;
-    }
-`
+
 const Pee = styled.p`
     font-size: 13px;
 `
 
-const LgWidgetContainer = styled.div`
-    flex: 2;
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-    padding: 20px;
-`
-const LgWidgetTitle = styled.h3`
-    font-size: 22px;
-    font-weight: 600;
-`
+
 const LgWidgetButton = styled.div`
     padding: 5px 7px;
     border: none;
@@ -205,12 +147,6 @@ align-items: center;
     grid-template-columns: 1fr;
     padding: 0 20px;
 }
-`
-const Wrapa = styled.div`
-        width: 100%;
-    display: flex;
-    height: auto;
-    justify-content: space-between; 
 `
 
 const Featured = () => {
