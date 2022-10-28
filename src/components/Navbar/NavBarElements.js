@@ -8,7 +8,7 @@ export const NavbarContainer = styled.div `
     top: 0;
     z-index: 999;
 @media screen and (max-width: 768px) {
-    width: 650px;
+    width: 400px;
 
 }
 `
@@ -21,7 +21,7 @@ export const NavbarWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
 @media screen and (max-width: 768px) {
-    width: 650px
+    width: 400px
 }
 `
 export const Logo = styled.span`

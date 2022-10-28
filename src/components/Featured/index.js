@@ -38,7 +38,6 @@ const FeaturedContainer = styled.div`
     max-width: 100%;
     align-items: center;
     grid-template-columns: 1fr;
-    padding: 0 20px;
 }   
 `
 const FeaturedItem = styled.div`
@@ -63,7 +62,7 @@ const FeaturedItem = styled.div`
 
 @media screen and (max-width: 768px) {
     display: grid;
-    width: 350px;
+    width: 280px;
     font: 9px;
     align-items: center;
     grid-template-columns: 1fr;
@@ -88,7 +87,7 @@ const FeaturedItem2 = styled.div`
 
 @media screen and (max-width: 768px) {
     display: grid;
-    width: 350px;
+    width: 280px;
     grid-template-columns: 1fr;
     align-items: center;
     padding: 0 20px;
@@ -149,6 +148,21 @@ const FeaturedMoneyContainer = styled.div`
     max-width: 100%;
     grid-template-columns: 1fr;
     padding: 0 20px;
+        .featuredMoney{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .featuredMoneyRate{
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }.featuredIcon{
+        font-size: 14px;
+        margin-left: 5px;
+        color: green;
+    }.featuredIcon.negative{
+        color: red;
+    }
 } 
 `
 
@@ -193,7 +207,7 @@ const LgWidgetTable1 = styled.table`
 
 @media screen and (max-width: 768px) {
     border-spacing: 10px;
-    font-size: 13px
+    font-size: 12px
 }
 `
 const LgWidgetTh = styled.th`
@@ -267,7 +281,6 @@ const Featured = () => {
     const { collapseSidebar } = useProSidebar();
   return (
     <main>
-          
         <FeaturedContainer>
         <Bars>
             <FontAwesomeIcon icon={faBars} onClick={() => collapseSidebar()} />
@@ -308,7 +321,6 @@ const Featured = () => {
             </LgWidgetTable>
             </FeaturedItem>
         </FeaturedContainer>     
-    
         <FeaturedContainer>
         <FeaturedItem>
             <Barcharts />

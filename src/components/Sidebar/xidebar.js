@@ -28,10 +28,13 @@ const SidebarContainerq = styled.div`
     overflow-y: auto;
     top: 50px;
     font-size: 13px;
+    margin: 0px;
     backgroundColor: #0c2556;
     .Stick{
 
     }
+    @media screen and (max-width: 768px) {
+} 
 `
 
 const Labs = styled.p`
@@ -44,7 +47,7 @@ const Xidebar = () => {
   return (
     <div className='Stick' style={{ display: 'flex', color: '#acaeb0', fontSize:13, backgroundColor: '#0c2556' }}>
     <SidebarContainerq>
-            <Sidebar transitionDuration={1000} backgroundColor={'#0c2556'} breakPoint={'Always'}>
+            <Sidebar transitionDuration={1000} backgroundColor={'#0c2556'}>
           <Menu>
             <MenuItem icon={<FontAwesomeIcon icon={faHome} />}> <Labs> Dashboards</Labs></MenuItem>
             </Menu>

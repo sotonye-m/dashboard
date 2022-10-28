@@ -92,7 +92,7 @@ function Barcharts(){
     <div className='Barcharts'>
         <h3>Active Users</h3>
         <div id="chart">
-            <ReactApexChart options={state.options} series={state.series} type="bar" height={350} width={350} />
+            <ReactApexChart options={state.options} series={state.series} type="bar" height={330} width={300} />
         </div>
     </div>
   )
