@@ -1,6 +1,6 @@
   
   .jvectormap-container {
-    height: 0;
+    height: 300px;
     position: relative;
     overflow: hidden;
     touch-action: none;

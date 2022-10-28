@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { Sidebar, Menu, MenuItem,useProSidebar, SubMenu } from 'react-pro-sidebar';
-import { Labels } from './SidebarElements'
-import { faFileInvoice, faHome, faUsers, faExclamationTriangle, faLeaf } from '@fortawesome/free-solid-svg-icons';
+import "../../../node_modules/react-pro-sidebar/dist/"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faFileInvoice, faHome, faUsers, faExclamationTriangle, faLeaf } from '@fortawesome/free-solid-svg-icons';
 import GoogleAnalyticsIcon from 'mdi-react/GoogleAnalyticsIcon'
 import AccountKeyIcon from 'mdi-react/AccountKeyIcon'
 import FileDocumentIcon from 'mdi-react/FileDocumentBoxIcon'
@@ -17,36 +18,54 @@ import bxError from '@iconify/icons-bx/bx-error'
 import bxPhotoAlbum from '@iconify/icons-bx/bx-photo-album'
 import bxsBarChart from '@iconify/icons-bx/bxs-bar-chart-alt-2'
 import { Icon } from '@iconify/react/dist/offline';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
+import {ReactComponent as ReactLogo} from '../../assets/images/blueberry_logo.svg'
+import { NavLogo, SLinkLabel, SidebarContainer,SidebarWrapper, Labels } from './SidebarElements';
+import { Nav, NavbarContainer, NavMenu, NavItem } from '../Navbar/NavBarElements';
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 
-
-
-const SidebarContainerq = styled.div`
-    flex: 1;
-    height: calc(100vh - 50px);
-    overflow-y: auto;
-    top: 50px;
-    font-size: 13px;
-    backgroundColor: #0c2556;
-    .Stick{
-
-    }
-`
-
-const Labs = styled.p`
-    color: #fff;
-`
-
-const Xidebar = () => {
+const ToggleSidebar = () => {
     const { collapseSidebar } = useProSidebar();
-
-  return (
-    <div className='Stick' style={{ display: 'flex', color: '#acaeb0', fontSize:13, backgroundColor: '#0c2556' }}>
-    <SidebarContainerq>
-            <Sidebar transitionDuration={1000} backgroundColor={'#0c2556'} breakPoint={'Always'}>
+    const imgsize = {
+        height: 25,
+        width: 45
+    }
+  
+    return (
+        <>
+       {/* <header>
+          <nav>
+          <Nav>                             
+                        <NavMenu>
+                            <NavItem>
+                            <NotificationsOutlinedIcon />
+                            </NavItem>
+                            <NavItem>
+                            <SettingsOutlinedIcon />
+                            </NavItem>
+                            <NavItem>
+                            <PersonOutlinedIcon />
+                            </NavItem>
+                            <NavItem>
+                            <LightModeOutlinedIcon />
+                            </NavItem>
+                        </NavMenu>
+            </Nav>
+          </nav>
+        </header> */}
+      <div style={{ display: 'flex', height: '100%', minHeight: '400px', color: '#acaeb0', zIndex:'-1' }}>
+        <SidebarContainer>
+        <Sidebar transitionDuration={1000} backgroundColor={'#0c2556'} >
+        
           <Menu>
-            <MenuItem icon={<FontAwesomeIcon icon={faHome} />}> <Labs> Dashboards</Labs></MenuItem>
+          <MenuItem icon={<ReactLogo style={imgsize} />}> <Labels style={{color: '#fff'}}>Wave</Labels></MenuItem>
+          </Menu>
+
+          <Menu>
+            <MenuItem icon={<FontAwesomeIcon icon={faHome} />}>  Dashboards</MenuItem>
             </Menu>
           
             <Menu>
@@ -100,11 +119,14 @@ const Xidebar = () => {
             <MenuItem icon={<Icon icon={bxPhotoAlbum} />}> Gallery</MenuItem>
             <MenuItem icon={<Icon icon={bxsBarChart} />}> Charts</MenuItem>
           </Menu>
-    </Sidebar>
-    </SidebarContainerq>
-    
-  </div>
-  )
-}
+        </Sidebar>
+        </SidebarContainer>
+          <div>
+            <FontAwesomeIcon icon={faBars} onClick={() => collapseSidebar()} style={{ padding: 10 }}/>
+          </div>
+      </div>
+      </>
+    );
+  }
 
-export default Xidebar
+  export default ToggleSidebar

@@ -23,7 +23,7 @@ const NavBar = () => {
                 <TopLeft backgroundColor={''}>
                   <Logo><Sidebar backgroundColor={'#0c2556'}><Menu><MenuItem icon={<ReactLogo fill="#3b96ce" style={imgsize} />}><Labels style={{color: '#11A1FD', fontSize: 13}}>Wave</Labels></MenuItem></Menu></Sidebar></Logo>
                 </TopLeft>
-                <Divq><FontAwesomeIcon icon={faBars} onClick={() => collapseSidebar()} style={{ padding: 10,MarginLef: 10 }}/></Divq>
+                <Divq><FontAwesomeIcon icon={faBars} onClick={() => collapseSidebar()} style={{ padding: 10,MarginLeft: 10 }}/></Divq>
                 <TopRight>
                     <IconContainer><NotificationsNone /><IconBadge>2</IconBadge></IconContainer>
                     <IconContainer><Language /></IconContainer>

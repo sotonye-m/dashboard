@@ -10,6 +10,10 @@ import Pie from '../Charts/Pie'
 import { faCircle } from '@fortawesome/free-solid-svg-icons'
 import  usIlChicagoMill  from '@react-jvectormap/chicago/dist/usIlChicagoMill.json';
 import { VectorMap } from "@react-jvectormap/core";
+import { Label1 } from '../../pages/dashboardElements'
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Sidebar, Menu, MenuItem,useProSidebar, SubMenu } from 'react-pro-sidebar';
+
 
 
 
@@ -17,21 +21,54 @@ const FeaturedContainer = styled.div`
     width: 100%;
     display: flex;
     height: auto;
+    background-color: #f8f8fb;
     justify-content: space-between; 
     .Pee{
         font: 10px
-    }   
+    }
+    @media screen and (max-width: 1000px) {
+    display: grid;
+    max-width: 100%;    
+    align-items: center;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    display: grid;
+    max-width: 100%;
+    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+}   
 `
 const FeaturedItem = styled.div`
     flex: 1;
     margin: 10px 20px;
     padding: 30px;
     border-radius: 10px;
+    align-items: center;
     cursor: pointer;
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     background: white;
     min-width:${props => props.tWidth || "auto"};
-    max-height:${props => props.tHeight || "auto"};
+    max-width:${props => props.mWidth || "auto"};
+    max-height:${props => props.tHeight || "100%"};
+    
+    @media screen and (max-width: 1000px) {
+    display: grid;
+    max-width: 100%;    
+    align-items: center;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    display: grid;
+    width: 350px;
+    font: 9px;
+    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+} 
 `
 const FeaturedItem2 = styled.div`
     flex: 1;
@@ -43,6 +80,19 @@ const FeaturedItem2 = styled.div`
     background: white;
     min-width:${props => props.tWidth || "auto"};
     max-height:${props => props.tHeight || "auto"};
+    @media screen and (max-width: 1000px) {
+    display: grid;
+    max-width: 100%;    
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    display: grid;
+    width: 350px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 0 20px;
+} 
 `
 
 const FeaturedWrap = styled.div`
@@ -52,6 +102,20 @@ const FeaturedWrap = styled.div`
     background: transparent;
     min-width:${props => props.tWidth || "auto"};
     max-height:${props => props.tHeight || "auto"};
+    @media screen and (max-width: 1000px) {
+    display: grid;
+    max-width: 100%;    
+    align-items: center;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    display: grid;
+    max-width: 100%;
+    align-items: center;
+    grid-template-columns: 1fr;
+    padding: 0px;
+} 
 `
 const FeaturedTitle = styled.span`
     font-size: 13px;
@@ -74,11 +138,24 @@ const FeaturedMoneyContainer = styled.div`
     }.featuredIcon.negative{
         color: red;
     }
+    @media screen and (max-width: 1000px) {
+    display: grid;
+    max-width: 100%;    
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+} 
 `
 
 const SmWidgetList = styled.ul`
     margin: 0;
     padding: 0;
+    align-items: center;
     list-style: none;
     .SmWidgetListItem{
         display: flex;
@@ -105,6 +182,19 @@ const LgWidgetButton = styled.div`
 const LgWidgetTable = styled.table`
     width: 100%;
     border-spacing: 20px;
+`
+const LgWidgetTable1 = styled.table`
+    width: 100%;
+    border-spacing: 20px;
+
+@media screen and (max-width: 1000px) {
+        
+}
+
+@media screen and (max-width: 768px) {
+    border-spacing: 10px;
+    font-size: 13px
+}
 `
 const LgWidgetTh = styled.th`
     text-align: left;
@@ -133,6 +223,18 @@ const LightTd = styled.td`
 `
 const MapContainer = styled.div`
   height: 380px;
+  @media screen and (max-width: 1000px) {
+    display: grid;
+    max-width: 100%;    
+    grid-template-columns: 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+} 
 `
 const ServicesWrapper = styled.div`
 display: grid;
@@ -140,21 +242,38 @@ grid-template-columns: 1fr 1fr 1fr;
 align-items: center;
 
 @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+}
+`
+const Bars = styled.div`
+    color: #000;
+    display: none;
+    @media screen and (max-width: 1000px) {
+    display: grid;
+
+}
+
+@media screen and (max-width: 768px) {
+    display: grid;
+
 }
 `
 
 const Featured = () => {
+    const { collapseSidebar } = useProSidebar();
   return (
     <main>
           
         <FeaturedContainer>
+        <Bars>
+            <FontAwesomeIcon icon={faBars} onClick={() => collapseSidebar()} />
+        </Bars>
             <FeaturedWrap tWidth={"60%"}>
+            <Label1>OVERVIEW</Label1>
             <ServicesWrapper>
                 {featuredData && featuredData.map((item, index ) =>(
             <FeaturedItem2 key={index}>
@@ -172,7 +291,7 @@ const Featured = () => {
             <Spline />
             </FeaturedItem>
             </FeaturedWrap>
-            <FeaturedItem tHeight={"600px"}>
+            <FeaturedItem tHeight={""}>
             <h4>Top Selling Product</h4>
             <LgWidgetTable>
             {ProductData && ProductData.map((item) => (
@@ -214,7 +333,7 @@ const Featured = () => {
         <FeaturedContainer>
             <FeaturedItem tWidth={"60%"}>
             <h4>Upcoming Events</h4>
-                    <LgWidgetTable>
+                    <LgWidgetTable1>
                         <tr>
                             <LgWidgetTh>Date</LgWidgetTh>
                             <LgWidgetTh>Customer</LgWidgetTh>
@@ -234,20 +353,16 @@ const Featured = () => {
                                 <LightTd>{item.total}</LightTd>
                             </tr>
                         ))}
-                    </LgWidgetTable>
+                    </LgWidgetTable1>
             </FeaturedItem>
-            <FeaturedItem tHeight={"80%"}>
+            <FeaturedItem tHeight={"110%"} mWidth={"100%"}>
             <h4>City Order Statistics</h4>
             <MapContainer>
                 <VectorMap map={usIlChicagoMill} fill="#3b96ce" backgroundColor="#3b96ce" width="100%"
-height="100%"
+height="350px"
 position="relative"
-overflow=" hidden"
-containerStyle={{
-                           width: '100%',
-                           height: '100%',
-                           color: 'red'
-                       }}/>
+overflow=""
+containerStyle={{                       }}/>
             </MapContainer>
             </FeaturedItem>
         </FeaturedContainer>

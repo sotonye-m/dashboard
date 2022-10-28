@@ -38,6 +38,9 @@ body,
   display: flex;
   margin-top: 10;
   background-color: #f8f8fb;
+  width:fit-content;
+  height: auto;
+  margin-right: 5px;
 }
 
 .link{

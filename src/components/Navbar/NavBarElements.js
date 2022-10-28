@@ -7,14 +7,22 @@ export const NavbarContainer = styled.div `
     position: sticky;
     top: 0;
     z-index: 999;
+@media screen and (max-width: 768px) {
+    width: 650px;
+
+}
 `
     
 export const NavbarWrapper = styled.div`
     height: 100%;
+    width: 100%;
     padding: 0px ;
     display: flex;
     align-items: center;
     justify-content: space-between;
+@media screen and (max-width: 768px) {
+    width: 650px
+}
 `
 export const Logo = styled.span`
     font-weight: bold;
@@ -37,6 +45,10 @@ export const IconContainer = styled.div`
     cursor: pointer;
     margin-right: 10px;
     color: #555;
+@media screen and (max-width: 768px) {
+    margin-right: 5px;
+
+}
 `
 export const IconBadge = styled.span`
     width: 15px;
@@ -61,4 +73,12 @@ export const Avatar = styled.img`
 
 export const Divq = styled.div `
     margin-left:-65%;
+    @media screen and (max-width: 1000px) {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    display: none;
+
+}
 `
